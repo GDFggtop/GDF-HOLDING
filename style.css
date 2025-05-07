@@ -79,3 +79,17 @@ footer {
   font-size: 0.9rem;
   border-top: 1px solid #333;
 }
+
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00bfff, #009acd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px #00bfff, 0 0 16px #009acd;
+  transition: text-shadow 0.3s ease;
+}
+.logo:hover {
+  text-shadow: 0 0 12px #00ffff, 0 0 24px #00bfff;
+}
