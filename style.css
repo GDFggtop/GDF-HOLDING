@@ -1,41 +1,89 @@
-/* ใช้เฉพาะหน้า performance */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: #eee;
+}
 
-.counter-wrapper {
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 80vh;
-  background: linear-gradient(to right, #1a1a1a, #000);
-  padding: 2rem;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.counter {
-  font-size: 4rem;
+.logo {
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #ffc400;
-  text-shadow: 0 0 10px rgba(255, 196, 0, 0.3);
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem 3rem;
-  border-radius: 16px;
-  box-shadow: 0 0 20px rgba(255, 196, 0, 0.4);
-  transition: transform 0.3s ease;
-  animation: fadeInCounter 1s ease-in-out;
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-@keyframes fadeInCounter {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.logo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
 
-@media (max-width: 768px) {
-  .counter {
-    font-size: 2.5rem;
-    padding: 1rem 2rem;
-  }
+.navbar nav a {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #ccc;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #00bfff;
+}
+
+.hero {
+  padding: 5rem 2rem;
+  text-align: center;
+  background: linear-gradient(to bottom right, #1a1a1a, #000000);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #aaa;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #00bfff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #009acd;
+  color: #fff;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
 }
