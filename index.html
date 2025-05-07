@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Performance | GDF HOLDING</title>
+  <title>GDF HOLDING</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -13,42 +13,20 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="history.html">History</a>
-      <a href="performance.html" class="active">Performance</a>
+      <a href="performance.html">Performance</a>
       <a href="capital.html">Capital</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Performance</h1>
-    <div class="animated-number-container">
-      <div class="number-label">Total Holding Value</div>
-      <div id="animatedNumber" class="animated-number">0</div>
-    </div>
+    <h1>Power. Elegance. Simplicity.</h1>
+    <p>Experience the next generation of innovation with GDF HOLDING.</p>
+    <a href="history.html" class="btn">Learn More</a>
   </section>
 
   <footer>
     <p>&copy; 2025 GDF HOLDING. All rights reserved.</p>
   </footer>
-
-  <script>
-    function animateValue(id, start, end, duration) {
-      const obj = document.getElementById(id);
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    }
-
-    window.onload = () => {
-      animateValue("animatedNumber", 0, 500000, 2000); // 2 seconds duration
-    };
-  </script>
 </body>
 </html>
