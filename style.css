@@ -1,71 +1,81 @@
 body {
-  margin: 0;
   font-family: 'Inter', sans-serif;
-  color: #111;
-  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  color: #eee;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  padding: 20px 60px;
-  background-color: #fff;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+  align-items: center;
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
   position: sticky;
   top: 0;
+  z-index: 1000;
 }
 
-.logo {
-  font-weight: 800;
+.navbar .logo {
   font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
 }
 
-nav a {
-  margin-left: 20px;
+.navbar nav a {
+  margin-left: 2rem;
   text-decoration: none;
-  color: #333;
+  color: #ccc;
   font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar nav a:hover {
+  color: #00bfff;
 }
 
 .hero {
-  height: 90vh;
-  background: url('images/hero.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 5rem 2rem;
   text-align: center;
-  color: white;
-  padding: 0 20px;
+  background: linear-gradient(to bottom right, #1a1a1a, #000000);
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
 }
 
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
+  color: #aaa;
 }
 
-.btn {
-  padding: 12px 30px;
-  background-color: #000;
-  color: #fff;
+.hero .btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: #00bfff;
+  color: #000;
   text-decoration: none;
-  font-weight: 600;
   border-radius: 8px;
-  transition: background 0.3s;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #333;
+.hero .btn:hover {
+  background-color: #009acd;
+  color: #fff;
 }
 
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #f4f4f4;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  color: #777;
   font-size: 0.9rem;
+  border-top: 1px solid #333;
 }
