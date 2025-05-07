@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Performance | GDF HOLDING</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>Performance - GDF HOLDING</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="navbar">
@@ -19,113 +19,14 @@
     </nav>
   </header>
 
-  <section class="hero performance">
-    <h1>Performance Overview</h1>
-
-    <div style="margin: 2rem auto; max-width: 600px;">
-      <label for="month-select">Select Month:</label>
-      <select id="month-select" onchange="updateChart()">
-        <option value="2025-04">April 2025</option>
-        <option value="2025-03">March 2025</option>
-        <option value="2025-02">February 2025</option>
-      </select>
-    </div>
-
-    <canvas id="pieChart" width="300" height="300"></canvas>
-
-    <div style="margin: 2rem auto; max-width: 600px;">
-      <label for="year-select">Summary by Year:</label>
-      <select id="year-select" onchange="updateSummary()">
-        <option value="2025">2025</option>
-        <option value="2024">2024</option>
-      </select>
-    </div>
-
-    <div id="year-summary" class="year-summary">
-      <!-- summary content loaded by JS -->
-    </div>
-
-    <h2 style="margin-top: 3rem;">Current Holdings</h2>
-    <table class="stock-table">
-      <thead>
-        <tr>
-          <th>Stock</th>
-          <th>Quantity</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>ABC Corp</td>
-          <td>1,200</td>
-          <td>$36,000</td>
-        </tr>
-        <tr>
-          <td>XYZ Ltd</td>
-          <td>800</td>
-          <td>$24,000</td>
-        </tr>
-        <tr>
-          <td>DEF Inc</td>
-          <td>500</td>
-          <td>$15,000</td>
-        </tr>
-      </tbody>
-    </table>
+  <section class="hero">
+    <h1>Performance</h1>
+    <p>See how GDF HOLDING has performed through the years.</p>
+    
   </section>
 
   <footer>
     <p>&copy; 2025 GDF HOLDING. All rights reserved.</p>
   </footer>
-
-  <script>
-    const chartData = {
-      "2025-04": { buy: 60, sell: 40 },
-      "2025-03": { buy: 45, sell: 55 },
-      "2025-02": { buy: 70, sell: 30 },
-    };
-
-    const yearSummaries = {
-      "2025": "Total Buy: $100,000 | Total Sell: $85,000",
-      "2024": "Total Buy: $80,000 | Total Sell: $90,000",
-    };
-
-    const ctx = document.getElementById('pieChart').getContext('2d');
-    let pieChart = new Chart(ctx, {
-      type: 'pie',
-      data: {
-        labels: ['Buy', 'Sell'],
-        datasets: [{
-          data: [60, 40],
-          backgroundColor: ['#00bfff', '#ff4d4d'],
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: 'bottom'
-          }
-        }
-      }
-    });
-
-    function updateChart() {
-      const month = document.getElementById('month-select').value;
-      const data = chartData[month];
-      pieChart.data.datasets[0].data = [data.buy, data.sell];
-      pieChart.update();
-    }
-
-    function updateSummary() {
-      const year = document.getElementById('year-select').value;
-      const summary = yearSummaries[year];
-      document.getElementById('year-summary').textContent = summary;
-    }
-
-    // Initialize
-    updateChart();
-    updateSummary();
-  </script>
 </body>
 </html>
