@@ -1,95 +1,162 @@
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #111;
-  color: #eee;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Performance - GDF HOLDING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #111;
+      color: #eee;
+    }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a1a;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1a1a1a;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  cursor: pointer;
-}
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.3s ease, text-shadow 0.3s ease;
+      cursor: pointer;
+    }
 
-.logo:hover {
-  transform: translateY(-2px);
-  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
-}
+    .logo:hover {
+      transform: translateY(-2px);
+      text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
+    }
 
-.navbar nav a {
-  margin-left: 2rem;
-  text-decoration: none;
-  color: #ccc;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
+    .navbar nav a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-.navbar nav a:hover {
-  color: #00bfff;
-}
+    .navbar nav a:hover {
+      color: #00bfff;
+    }
 
-.hero {
-  padding: 5rem 2rem;
-  text-align: center;
-  background: linear-gradient(to bottom right, #1a1a1a, #000000);
-  min-height: calc(100vh - 160px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    .hero {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(to bottom right, #1a1a1a, #000000);
+      min-height: calc(100vh - 160px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 1rem;
-}
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
 
-.counter {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #00ffcc;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
-  transition: all 0.3s ease-in-out;
-  margin-top: 2rem;
-}
+    .counter {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #00ffcc;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.2rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
+      transition: all 0.3s ease-in-out;
+      margin-top: 2rem;
+      animation: fadeUp 1s ease-out;
+    }
 
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #1a1a1a;
-  color: #777;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-}
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background-color: #1a1a1a;
+      color: #777;
+      font-size: 0.9rem;
+      border-top: 1px solid #333;
+    }
 
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
 
-  .counter {
-    font-size: 2.2rem;
-    padding: 0.8rem 1.5rem;
-  }
-}
+      .counter {
+        font-size: 2.8rem;
+        padding: 1rem 2rem;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="index.html">GDF HOLDING</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="performance.html">Performance</a>
+      <a href="capital.html">Capital</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Total Portfolio Value</h1>
+    <div id="counter" class="counter">0</div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 GDF HOLDING. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function animateNumber(id, start, end, duration) {
+      const element = document.getElementById(id);
+      let startTime = null;
+
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = value.toLocaleString();
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      animateNumber("counter", 0, 500000, 2000); // from 0 to 500,000 in 2 sec
+    });
+  </script>
+</body>
+</html>
