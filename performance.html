@@ -1,95 +1,63 @@
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #111;
-  color: #eee;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Number</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0f0f0f;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #00bfff;
+    }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1a1a;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    .animated-number {
+      font-size: 6rem;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
+      animation: fadeInUp 1s ease-out;
+    }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  text-decoration: none;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-  cursor: pointer;
-}
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="animatedNumber" class="animated-number">0</div>
 
-.logo:hover {
-  transform: translateY(-2px);
-  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
-}
+  <script>
+    function animateValue(id, start, end, duration) {
+      const obj = document.getElementById(id);
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.textContent = Math.floor(progress * (end - start) + start).toLocaleString();
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
 
-.navbar nav a {
-  margin-left: 2rem;
-  text-decoration: none;
-  color: #ccc;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.navbar nav a:hover {
-  color: #00bfff;
-}
-
-.hero {
-  padding: 5rem 2rem;
-  text-align: center;
-  background: linear-gradient(to bottom right, #1a1a1a, #000000);
-  min-height: calc(100vh - 160px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero h1 {
-  font-size: 2.8rem;
-  font-weight: 800;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
-.counter {
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: #00ffcc;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.2);
-  transition: all 0.3s ease-in-out;
-  margin-top: 2rem;
-}
-
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: #1a1a1a;
-  color: #777;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
-}
-
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .counter {
-    font-size: 2.2rem;
-    padding: 0.8rem 1.5rem;
-  }
-}
+    window.onload = () => {
+      animateValue("animatedNumber", 0, 500000, 2000); // animate to 500,000 in 2 seconds
+    };
+  </script>
+</body>
+</html>
