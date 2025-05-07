@@ -18,10 +18,18 @@ body {
   z-index: 1000;
 }
 
-.navbar .logo {
+.logo {
   font-size: 1.5rem;
   font-weight: 800;
   color: #fff;
+  text-decoration: none;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
 
 .navbar nav a {
@@ -78,17 +86,4 @@ footer {
   color: #777;
   font-size: 0.9rem;
   border-top: 1px solid #333;
-}
-
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #fff;
-  transition: transform 0.3s ease, text-shadow 0.3s ease;
-}
-
-.logo:hover {
-  transform: translateY(-2px);
-  text-shadow: 0 0 6px rgba(0, 191, 255, 0.4);
 }
