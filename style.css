@@ -2,18 +2,18 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Apply box-sizing to all elements and pseudo-elements */
+  box-sizing: border-box;
 }
 
 html {
-  font-family: 'Inter', sans-serif; /* Set base font family on html for better inheritance */
-  line-height: 1.6; /* Improve readability with a base line-height */
-  -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit browsers */
-  -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  font-family: 'Inter', sans-serif; /* Ensure Inter font is applied, inherited from html but good to be explicit */
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #111;
@@ -64,7 +64,7 @@ body {
   padding: 5rem 2rem;
   text-align: center;
   background: linear-gradient(to bottom right, #1a1a1a, #000000);
-  min-height: calc(100vh - 160px); /* Example: Make hero fill more of the viewport height, adjust 160px based on navbar and footer height */
+  min-height: calc(100vh - 160px);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,12 +91,37 @@ body {
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hero .btn:hover {
   background-color: #009acd;
   color: #fff;
+}
+
+/* --- Coming Soon Specific Styles --- */
+.coming-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.coming-subtext {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.coming-soon-tag {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #00bfff;
+  color: #000;
+  font-weight: 600;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 /* --- Footer Styles --- */
@@ -112,53 +137,83 @@ footer {
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column; /* Stack navbar items vertically */
-    align-items: center; /* Center items in column layout */
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
   }
 
   .navbar nav {
     margin-top: 1rem;
     display: flex;
-    flex-direction: column; /* Stack nav links vertically */
-    width: 100%; /* Make nav take full width */
+    flex-direction: column;
+    width: 100%;
   }
 
   .navbar nav a {
-    margin-left: 0; /* Remove left margin */
-    margin-bottom: 0.5rem; /* Add some space between stacked links */
-    padding: 0.75rem; /* Add padding for easier tapping */
-    text-align: center; /* Center text for nav links */
-    border-top: 1px solid #2a2a2a; /* Separator lines for mobile */
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+    padding: 0.75rem;
+    text-align: center;
+    border-top: 1px solid #2a2a2a;
   }
-  
+
   .navbar nav a:first-child {
-    border-top: none; /* Remove border for the first item */
+    border-top: none;
   }
 
   .hero {
-    padding: 3rem 1rem; /* Adjust padding for smaller screens */
-    min-height: calc(100vh - 200px); /* Adjust min-height if navbar grows */
+    padding: 3rem 1rem;
+    min-height: calc(100vh - 200px);
   }
 
   .hero h1 {
-    font-size: 2.2rem; /* Slightly smaller font for hero H1 on small screens */
+    font-size: 2.2rem;
   }
 
   .hero p {
-    font-size: 1rem; /* Slightly smaller font for hero P on small screens */
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 1.8rem; /* Even smaller font for very small screens */
+    font-size: 1.8rem;
   }
+
   .hero p {
     font-size: 0.9rem;
   }
+
   .hero .btn {
-    padding: 0.6rem 1.5rem; /* Adjust button padding */
+    padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
   }
+}
+/* --- Animation Keyframes --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Animated Appearance --- */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0; /* Initial state before animation starts */
+}
+
+/* Optional: staggered delay (for chaining effects) */
+.delay-1 {
+  animation-delay: 0.2s;
+}
+.delay-2 {
+  animation-delay: 0.4s;
+}
+.delay-3 {
+  animation-delay: 0.6s;
 }
