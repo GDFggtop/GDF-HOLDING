@@ -1,11 +1,26 @@
+/* --- Basic Reset & Global Styles --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Apply box-sizing to all elements and pseudo-elements */
+}
+
+html {
+  font-family: 'Inter', sans-serif; /* Set base font family on html for better inheritance */
+  line-height: 1.6; /* Improve readability with a base line-height */
+  -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* Smoother fonts on Firefox */
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif; /* Ensure Inter font is applied, inherited from html but good to be explicit */
   margin: 0;
   padding: 0;
   background-color: #111;
   color: #eee;
 }
 
+/* --- Navbar Styles --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -44,10 +59,15 @@ body {
   color: #00bfff;
 }
 
+/* --- Hero Section Styles --- */
 .hero {
   padding: 5rem 2rem;
   text-align: center;
   background: linear-gradient(to bottom right, #1a1a1a, #000000);
+  min-height: calc(100vh - 160px); /* Example: Make hero fill more of the viewport height, adjust 160px based on navbar and footer height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero h1 {
@@ -71,7 +91,7 @@ body {
   text-decoration: none;
   border-radius: 8px;
   font-weight: 600;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
 }
 
 .hero .btn:hover {
@@ -79,6 +99,7 @@ body {
   color: #fff;
 }
 
+/* --- Footer Styles --- */
 footer {
   text-align: center;
   padding: 1.5rem;
@@ -86,4 +107,58 @@ footer {
   color: #777;
   font-size: 0.9rem;
   border-top: 1px solid #333;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Stack navbar items vertically */
+    align-items: center; /* Center items in column layout */
+    padding: 1rem;
+  }
+
+  .navbar nav {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column; /* Stack nav links vertically */
+    width: 100%; /* Make nav take full width */
+  }
+
+  .navbar nav a {
+    margin-left: 0; /* Remove left margin */
+    margin-bottom: 0.5rem; /* Add some space between stacked links */
+    padding: 0.75rem; /* Add padding for easier tapping */
+    text-align: center; /* Center text for nav links */
+    border-top: 1px solid #2a2a2a; /* Separator lines for mobile */
+  }
+  
+  .navbar nav a:first-child {
+    border-top: none; /* Remove border for the first item */
+  }
+
+  .hero {
+    padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    min-height: calc(100vh - 200px); /* Adjust min-height if navbar grows */
+  }
+
+  .hero h1 {
+    font-size: 2.2rem; /* Slightly smaller font for hero H1 on small screens */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Slightly smaller font for hero P on small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem; /* Even smaller font for very small screens */
+  }
+  .hero p {
+    font-size: 0.9rem;
+  }
+  .hero .btn {
+    padding: 0.6rem 1.5rem; /* Adjust button padding */
+    font-size: 0.9rem;
+  }
 }
