@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GDF HOLDING</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Pridi:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="navbar">
@@ -15,29 +15,17 @@
       <a href="#">Performance</a>
       <a href="#">Capital</a>
       <a href="#">Contact</a>
-      <button class="toggle-dark" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-        <span id="theme-icon">☀️</span>
-      </button>
     </nav>
   </header>
 
   <section class="hero">
-    <div class="center-text">
-      <h1>GDF HOLDING</h1>
-      <p>Coming Soon</p>
-    </div>
+    <h1>Power. Elegance. Simplicity.</h1>
+    <p>Experience the next generation of innovation with GDF HOLDING.</p>
+    <a href="#" class="btn">Learn More</a>
   </section>
 
   <footer>
     <p>&copy; 2025 GDF HOLDING. All rights reserved.</p>
   </footer>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark-mode");
-      const icon = document.getElementById("theme-icon");
-      icon.textContent = document.body.classList.contains("dark-mode") ? "🌙" : "☀️";
-    }
-  </script>
 </body>
 </html>
